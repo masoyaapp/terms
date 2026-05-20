@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Masoya Terms of Service — Rules for using the Masoya dating app." />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Terms of Service · Masoya</title>
+
+    <style>
+        :root {
+            --bg: #f8fafb;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-secondary: #5b6e85;
+            --accent: #e11d48;
+            --accent-soft: #fef1f3;
+            --accent-border: #f7ccd4;
+            --border: #e8ecf1;
+            --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04);
+            --shadow-md: 0 6px 24px rgba(16, 24, 40, 0.07);
+            --shadow-lg: 0 18px 48px rgba(16, 24, 40, 0.10);
+            --radius-sm: 10px;
+            --radius: 18px;
+            --radius-lg: 24px;
+            --max-width: 920px;
+            --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --transition: 180ms ease-out;
+            --progress: 0%;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f1419;
+            --card-bg: #1a1f27;
+            --text: #e6ecf3;
+            --text-secondary: #94a3b8;
+            --accent: #f34b68;
+            --accent-soft: #251318;
+            --accent-border: #3d1f28;
+            --border: #29303b;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.18);
+            --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.28);
+            --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.35);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0f1419;
+                --card-bg: #1a1f27;
+                --text: #e6ecf3;
+                --text-secondary: #94a3b8;
+                --accent: #f34b68;
+                --accent-soft: #251318;
+                --accent-border: #3d1f28;
+                --border: #29303b;
+                --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.18);
+                --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.28);
+                --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.35);
+            }
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.72;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background var(--transition), color var(--transition);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: var(--progress);
+            background: linear-gradient(90deg, var(--accent), #f7728a);
+            z-index: 1000;
+            border-radius: 0 2px 2px 0;
+            transition: width 60ms linear;
+            pointer-events: none;
+        }
+
+        .wrap {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 20px 18px 72px;
+        }
+
+        .hero {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 36px 32px 32px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow var(--transition), border-color var(--transition);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, var(--accent-soft) 0%, transparent 75%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 14px;
+        }
+
+        .brand-logo {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            object-fit: cover;
+            display: block;
+            background: #ffffff;
+            border: 1.5px solid var(--accent-border);
+            box-shadow: 0 8px 22px rgba(225, 29, 72, 0.13);
+            transition: transform var(--transition);
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.04);
+        }
+
+        .brand-name {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--accent);
+            letter-spacing: -0.3px;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            line-height: 1.18;
+            color: var(--text);
+        }
+
+        .hero .subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 640px;
+            margin: 0 0 18px;
+        }
+
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 13.5px;
+            color: var(--text-secondary);
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 7px 14px;
+            background: var(--card-bg);
+            font-weight: 500;
+            white-space: nowrap;
+            transition: border-color var(--transition);
+        }
+
+        .pill .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 18px 20px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+            position: sticky;
+            top: 16px;
+            z-index: 20;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            background: color-mix(in srgb, var(--card-bg) 92%, transparent);
+            transition: box-shadow var(--transition), border-color var(--transition);
+        }
+
+        .toc.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .toc-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 11px;
+        }
+
+        .toc-header strong {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .toc-header .icon {
+            font-size: 15px;
+        }
+
+        .toc-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .toc-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            border-radius: 999px;
+            padding: 6px 13px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all var(--transition);
+            white-space: nowrap;
+        }
+
+        .toc-links a:hover,
+        .toc-links a:focus-visible {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-soft);
+            outline: none;
+        }
+
+        .toc-links a.active {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+            font-weight: 600;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 26px 28px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 16px;
+            border-left: 4px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .card:hover {
+            border-left-color: var(--accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card h2 {
+            margin: 0 0 12px;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 .section-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 15px;
+            font-weight: 700;
+            flex-shrink: 0;
+            border: 1px solid var(--accent-border);
+        }
+
+        .card p {
+            margin: 10px 0;
+            color: var(--text);
+        }
+
+        .card ul {
+            margin: 10px 0 0 8px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .card li {
+            margin: 9px 0;
+            padding-left: 22px;
+            position: relative;
+            color: var(--text);
+        }
+
+        .card li::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: 9px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.7;
+        }
+
+        .card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition);
+            word-break: break-all;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .note {
+            border-left: 4px solid var(--accent);
+            background: var(--accent-soft);
+            padding: 14px 16px;
+            border-radius: 14px;
+            margin: 14px 0;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .deletion-link-box {
+            background: var(--accent-soft);
+            border: 1px solid var(--accent-border);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+            margin: 14px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-weight: 500;
+        }
+
+        .deletion-link-box .link-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .copy-btn {
+            background: var(--accent-soft);
+            border: 1px solid var(--accent-border);
+            color: var(--accent);
+            padding: 7px 13px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            font-family: var(--font-sans);
+            transition: all var(--transition);
+            white-space: nowrap;
+        }
+
+        .copy-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        .copy-btn.copied {
+            background: #16a34a;
+            border-color: #16a34a;
+            color: #fff;
+        }
+
+        .footer {
+            margin-top: 28px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13.5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btt-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 50;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(225, 29, 72, 0.28);
+            opacity: 0;
+            transform: translateY(16px);
+            pointer-events: none;
+            transition: all 260ms ease-out;
+        }
+
+        .btt-float.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .btt-float:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(225, 29, 72, 0.36);
+        }
+
+        .btt-float:active {
+            transform: scale(0.94);
+        }
+
+        :focus-visible {
+            outline: 2.5px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 6px;
+        }
+
+        @media print {
+            .progress-bar,
+            .toc,
+            .btt-float,
+            .copy-btn,
+            .actions {
+                display: none !important;
+            }
+            body {
+                background: #fff;
+                color: #000;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                border-left: 3px solid #000;
+                break-inside: avoid;
+                margin-bottom: 10px;
+                padding: 16px 18px;
+            }
+            .hero {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                padding: 20px;
+            }
+            .wrap {
+                max-width: 100%;
+                padding: 0;
+            }
+            a {
+                color: #000;
+                text-decoration: underline;
+            }
+            .card h2 .section-num {
+                background: #eee;
+                color: #000;
+                border: 1px solid #ccc;
+            }
+            .note,
+            .deletion-link-box {
+                background: #f9f9f9;
+                border: 1px solid #ccc;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .hero {
+                padding: 24px 18px 20px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .card {
+                padding: 20px 16px;
+            }
+            .card h2 {
+                font-size: 19px;
+            }
+            .toc {
+                position: static;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                background: var(--card-bg);
+            }
+            .toc-links a {
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+            .btt-float {
+                bottom: 18px;
+                right: 16px;
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            .deletion-link-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+            .meta-row {
+                gap: 6px;
+            }
+            .pill {
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+            .toc-links {
+                gap: 5px;
+            }
+            .toc-links a {
+                font-size: 11px;
+                padding: 5px 9px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+    <div class="wrap">
+
+        <!-- Hero -->
+        <header class="hero">
+            <div class="brand-row">
+                <img src="app_icon.png" alt="Masoya app icon" class="brand-logo" width="46" height="46" loading="eager" />
+                <span class="brand-name">Masoya</span>
+            </div>
+            <h1>Terms of Service</h1>
+            <p class="subtitle">
+                These Terms of Service explain the rules for using Masoya,
+                including account responsibilities, acceptable use, user content,
+                safety, and account deletion.
+            </p>
+            <div class="meta-row">
+                <span class="pill"><span class="dot"></span> <strong>App:</strong>&nbsp;Masoya</span>
+                <span class="pill"><span class="dot"></span> <strong>Platform:</strong>&nbsp;Android &amp; iOS</span>
+                <span class="pill"><span class="dot"></span> <strong>Updated:</strong>&nbsp;May&nbsp;19,&nbsp;2026</span>
+            </div>
+        </header>
+
+        <!-- Sticky TOC -->
+        <nav class="toc" id="tocNav" aria-label="Table of contents">
+            <div class="toc-header">
+                <span class="icon">&#9776;</span>
+                <strong>Jump to Section</strong>
+            </div>
+            <div class="toc-links" id="tocLinks">
+                <a href="#agreement">Agreement</a>
+                <a href="#eligibility">Eligibility</a>
+                <a href="#account">Account</a>
+                <a href="#content">User Content</a>
+                <a href="#conduct">Conduct</a>
+                <a href="#safety">Safety</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#thirdparty">Third-Party</a>
+                <a href="#intellectual-property">IP</a>
+                <a href="#termination">Termination</a>
+                <a href="#deletion">Account Deletion</a>
+                <a href="#disclaimer">Disclaimers</a>
+                <a href="#liability">Liability</a>
+                <a href="#governing-law">Governing Law</a>
+                <a href="#changes">Changes</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <!-- 1. Agreement -->
+        <section class="card" id="agreement">
+            <h2><span class="section-num">1</span> Agreement to These Terms</h2>
+            <p>
+                By creating an account, accessing, or using Masoya, you agree to
+                be bound by these Terms of Service and our Privacy Policy.
+                If you do not agree to these Terms, you must not use the app.
+            </p>
+        </section>
+
+        <!-- 2. Eligibility -->
+        <section class="card" id="eligibility">
+            <h2><span class="section-num">2</span> Eligibility</h2>
+            <p>
+                Masoya is intended only for adults who are 18 years of age or older.
+                By using Masoya, you represent and warrant that you are at least
+                18 years old and legally able to enter into this agreement.
+            </p>
+            <p>
+                We do not knowingly permit minors to use the app.
+                If we discover that an account belongs to a minor,
+                we may suspend or permanently delete the account.
+            </p>
+        </section>
+
+        <!-- 3. Your Account -->
+        <section class="card" id="account">
+            <h2><span class="section-num">3</span> Your Account</h2>
+            <p>
+                You are responsible for maintaining the confidentiality of your
+                login credentials and for all activity that occurs under your account.
+            </p>
+            <ul>
+                <li>Provide accurate and current information.</li>
+                <li>Do not create fake accounts or impersonate others.</li>
+                <li>Keep your password secure.</li>
+                <li>Use only one account unless we permit otherwise.</li>
+            </ul>
+            <p>
+                You may delete your account at any time through the account
+                settings within the app.
+            </p>
+        </section>
+
+        <!-- 4. User Content -->
+        <section class="card" id="content">
+            <h2><span class="section-num">4</span> User Content</h2>
+            <p>
+                You may upload profile photos, personal information, messages,
+                and other content through Masoya.
+            </p>
+            <p>
+                You retain ownership of your content, but you grant Masoya a
+                limited, non-exclusive license to store, process, display,
+                and transmit that content solely for the purpose of operating
+                and improving the service.
+            </p>
+            <p>
+                You are solely responsible for the content you upload or send.
+            </p>
+        </section>
+
+        <!-- 5. Acceptable Use -->
+        <section class="card" id="conduct">
+            <h2><span class="section-num">5</span> Acceptable Use</h2>
+            <p>You agree not to use Masoya to:</p>
+            <ul>
+                <li>Harass, threaten, abuse, or harm other users.</li>
+                <li>Post illegal, hateful, violent, sexually explicit, or misleading content.</li>
+                <li>Impersonate another person or misrepresent your identity.</li>
+                <li>Send spam, scams, phishing attempts, or malware.</li>
+                <li>Use bots, scrapers, or automated tools without permission.</li>
+                <li>Bypass or interfere with app security or moderation systems.</li>
+                <li>Collect personal data from other users without consent.</li>
+            </ul>
+        </section>
+
+        <!-- 6. Safety -->
+        <section class="card" id="safety">
+            <h2><span class="section-num">6</span> Safety and Interactions</h2>
+            <p>
+                Masoya helps users connect, but we do not guarantee the identity,
+                intentions, or conduct of any user.
+            </p>
+            <p>
+                Masoya does not perform criminal background checks and does not
+                independently verify all user identities.
+            </p>
+            <p>
+                You are solely responsible for your interactions with other users.
+            </p>
+            <div class="note">
+                Use caution when communicating with others and avoid sharing
+                sensitive personal or financial information.
+            </div>
+        </section>
+
+        <!-- 7. Privacy -->
+        <section class="card" id="privacy">
+            <h2><span class="section-num">7</span> Privacy</h2>
+            <p>
+                Our collection and use of personal information is described in
+                the Masoya Privacy Policy. By using Masoya, you also agree to
+                that Privacy Policy.
+            </p>
+        </section>
+
+        <!-- 8. Third-Party Services -->
+        <section class="card" id="thirdparty">
+            <h2><span class="section-num">8</span> Third-Party Services</h2>
+            <p>
+                Masoya uses third-party services such as Google Firebase to
+                provide authentication, storage, notifications, and other
+                essential functionality.
+            </p>
+            <p>
+                These services may be governed by their own terms and privacy policies.
+            </p>
+        </section>
+
+        <!-- 9. Intellectual Property -->
+        <section class="card" id="intellectual-property">
+            <h2><span class="section-num">9</span> Intellectual Property</h2>
+            <p>
+                Masoya, including its software, design, logos, trademarks,
+                and branding (excluding user content), is owned by Masoya and
+                protected by applicable intellectual property laws.
+            </p>
+            <p>
+                You may not copy, modify, distribute, reverse engineer,
+                or create derivative works from any part of the app,
+                except as permitted by law.
+            </p>
+        </section>
+
+        <!-- 10. Suspension and Termination -->
+        <section class="card" id="termination">
+            <h2><span class="section-num">10</span> Suspension and Termination</h2>
+            <p>
+                We may suspend or permanently terminate your account if you
+                violate these Terms, our Privacy Policy, or applicable laws,
+                or if your activity poses a risk to other users or the service.
+            </p>
+            <p>
+                You may stop using Masoya at any time and delete your account
+                through the app.
+            </p>
+        </section>
+
+       <!-- Add this to Terms of Service under Suspension and Termination or a new section -->
+<section class="card" id="deletion">
+  <h2>11. Account Deletion</h2>
+  <p>
+    You may delete your account at any time through the app or by using our web-based account deletion request page.
+  </p>
+  <p>
+    After deletion, we will remove or de-identify your account data from our active systems, except where retention is required for legal, security, or fraud-prevention purposes.
+  </p>
+</section>
+
+        <!-- 12. Disclaimers -->
+        <section class="card" id="disclaimer">
+            <h2><span class="section-num">12</span> Disclaimers</h2>
+            <p>
+                Masoya is provided on an "as is" and "as available" basis.
+                We do not guarantee that the app will always be uninterrupted,
+                secure, or error-free.
+            </p>
+            <p>
+                To the maximum extent permitted by law, we disclaim all warranties
+                not expressly stated in these Terms.
+            </p>
+        </section>
+
+        <!-- 13. Limitation of Liability -->
+        <section class="card" id="liability">
+            <h2><span class="section-num">13</span> Limitation of Liability</h2>
+            <p>
+                To the maximum extent permitted by law, Masoya and its owners
+                shall not be liable for any indirect, incidental, special,
+                consequential, or punitive damages arising from your use of
+                the app or your interactions with other users.
+            </p>
+        </section>
+
+        <!-- 14. Governing Law -->
+        <section class="card" id="governing-law">
+            <h2><span class="section-num">14</span> Governing Law</h2>
+            <p>
+                These Terms of Service shall be governed by and interpreted in
+                accordance with the laws of the Federal Republic of Nigeria,
+                without regard to conflict of law principles.
+            </p>
+        </section>
+
+        <!-- 15. Changes to These Terms -->
+        <section class="card" id="changes">
+            <h2><span class="section-num">15</span> Changes to These Terms</h2>
+            <p>
+                We may update these Terms from time to time.
+                When we do, we will revise the "Last Updated" date above and
+                may notify you through the app or by email when appropriate.
+            </p>
+            <p>
+                Your continued use of Masoya after changes become effective
+                constitutes acceptance of the updated Terms.
+            </p>
+        </section>
+
+        <!-- 16. Contact -->
+        <section class="card" id="contact">
+            <h2><span class="section-num">16</span> Contact Us</h2>
+            <p>
+                If you have any questions about these Terms of Service,
+                please contact us at:
+            </p>
+            <div class="contact-row">
+                <strong>Email:</strong>
+                <a href="mailto:masoyaapp@gmail.com">masoyaapp@gmail.com</a>
+                <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address to clipboard">Copy</button>
+                <span id="copyFeedback" style="font-size:12px;color:var(--text-secondary);opacity:0;transition:opacity 200ms;">Copied!</span>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="actions">
+                <button class="copy-btn" onclick="scrollToTop()" style="font-size:14px;padding:10px 18px;">
+                    &uarr;&nbsp; Back to Top
+                </button>
+            </div>
+            <p>&copy; <span id="year"></span> Masoya. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Floating Back-to-Top -->
+    <button class="btt-float" id="bttFloat" aria-label="Scroll back to top" title="Back to top">
+        &uarr;
+    </button>
+
+    <script>
+        (function() {
+            const progressBar = document.getElementById('progressBar');
+            const tocNav = document.getElementById('tocNav');
+            const tocLinksContainer = document.getElementById('tocLinks');
+            const tocLinks = tocLinksContainer.querySelectorAll('a');
+            const bttFloat = document.getElementById('bttFloat');
+            const copyBtn = document.getElementById('copyEmailBtn');
+            const copyFeedback = document.getElementById('copyFeedback');
+            const sections = document.querySelectorAll('section.card[id]');
+            const yearSpan = document.getElementById('year');
+
+            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+            function updateProgress() {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const pct = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
+                document.documentElement.style.setProperty('--progress', pct.toFixed(1) + '%');
+            }
+
+            function updateTocShadow() {
+                const stuck = tocNav.getBoundingClientRect().top <= 18;
+                tocNav.classList.toggle('scrolled', stuck && window.scrollY > 40);
+            }
+
+            function updateActiveLink() {
+                let currentId = '';
+                const offset = 110;
+                sections.forEach((sec) => {
+                    const top = sec.getBoundingClientRect().top;
+                    if (top <= offset) {
+                        currentId = sec.getAttribute('id');
+                    }
+                });
+                tocLinks.forEach((link) => {
+                    const href = link.getAttribute('href');
+                    const id = href ? href.replace('#', '') : '';
+                    link.classList.toggle('active', id === currentId);
+                });
+            }
+
+            function updateBttVisibility() {
+                const show = window.scrollY > 500;
+                bttFloat.classList.toggle('visible', show);
+            }
+
+            function onScroll() {
+                updateProgress();
+                updateTocShadow();
+                updateActiveLink();
+                updateBttVisibility();
+            }
+
+            window.scrollToTop = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            bttFloat.addEventListener('click', () => {
+                window.scrollToTop();
+            });
+
+            if (copyBtn) {
+                let copyTimeout;
+                copyBtn.addEventListener('click', async () => {
+                    try {
+                        await navigator.clipboard.writeText('masoyaapp@gmail.com');
+                        copyBtn.textContent = 'Copied!';
+                        copyBtn.classList.add('copied');
+                        copyFeedback.style.opacity = '1';
+                        clearTimeout(copyTimeout);
+                        copyTimeout = setTimeout(() => {
+                            copyBtn.textContent = 'Copy';
+                            copyBtn.classList.remove('copied');
+                            copyFeedback.style.opacity = '0';
+                        }, 1800);
+                    } catch {
+                        const tempInput = document.createElement('input');
+                        tempInput.value = 'masoyaapp@gmail.com';
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tempInput);
+                        copyBtn.textContent = 'Copied!';
+                        copyBtn.classList.add('copied');
+                        copyFeedback.style.opacity = '1';
+                        clearTimeout(copyTimeout);
+                        copyTimeout = setTimeout(() => {
+                            copyBtn.textContent = 'Copy';
+                            copyBtn.classList.remove('copied');
+                            copyFeedback.style.opacity = '0';
+                        }, 1800);
+                    }
+                });
+            }
+
+            updateProgress();
+            updateTocShadow();
+            updateActiveLink();
+            updateBttVisibility();
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', () => {
+                updateProgress();
+                updateActiveLink();
+            });
+
+            bttFloat.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') bttFloat.blur();
+            });
+        })();
+    </script>
+</body>
+</html>
